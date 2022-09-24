@@ -1,9 +1,9 @@
 IV = [0x6A09E667, 0xBB67AE85, 0x3C6EF372, 0xA54FF53A, 0x510E527F, 0x9B05688C, 0x1F83D9AB, 0x5BE0CD19]
 
-CHUNK_START = 2 ** 0
-CHUNK_END = 2 ** 1
-PARENT = 2 ** 2
-ROOT = 2 ** 3
+CHUNK_START = 1
+CHUNK_END = 1 << 1
+PARENT = 1 << 2
+ROOT = 1 << 3
 
 BLOCK_LENGTH = 64
 CHUNK_LENGTH = 1024
@@ -15,7 +15,7 @@ def t1(counter: int) -> int:
     return counter >> 32
 
 def int32(a: int) -> int:
-    return a % (2 ** 32)
+    return a >> 32
 
 def add(a: int, b: int) -> int:
     return int32(a + b)
